@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/customColors.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/ion.rangeSlider.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/index.css" media="screen,projection" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="card rowTitulo">
+            <h1>Bienes Intelcost</h1>
+        </div>
+        <div class="colFiltros">
+            <form action="#" id="formulario">
+                <div class="filtrosContenido">
+                    <div class="tituloFiltros">
+                        <h5>Filtros</h5>
+                    </div>
+                    <div class="filtroCiudad input-field">
+                        <p><label for="selectCiudad">Ciudad:</label><br></p>
+                        <select name="ciudad" class="selectCiudad selects">
+                            <option value="" selected>Elige una ciudad</option>
+                        </select>
+                    </div>
+                    <div class="filtroTipo input-field">
+                        <p><label for="selecTipo">Tipo:</label></p>
+                        <br>
+                        <select name="tipo" class="selectTipo selects">
+                            <option value="" selected>Elige un tipo</option>
+                        </select>
+                    </div>
+                    <div class="filtroPrecio">
+                        <label for="rangoPrecio">Precio:</label>
+                        <input type="text" id="rangoPrecio" name="precio" value="" />
+                    </div>
+                    <div class="botonField">
+                        <input type="submit" class="btn white" value="Buscar" id="submitButton">
+                        </div>
+                    <div class="botonField">
+                        <input type="button" class="btn blue-grey darken-2 white-text d-none" onclick="resetFilters()" style="margin-left: 10px;" value="Vaciar filtros" id="removeFilters">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div id="tabs" style="width: 75%;">
+            <ul>
+                <li><a href="#tabs-1">Bienes disponibles</a></li>
+                <li><a href="#tabs-2">Mis bienes</a></li>
+                <li><a href="#tabs-3">Reportes</a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="colContenido" id="divResultadosBusqueda">
+                    <div class="tituloContenido card" style="justify-content: center;">
+                        <h5>Resultados de la búsqueda:</h5>
+                        <div class="divider"></div>
+                        <div id="cards-r" class="row overflow-h "></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tabs-2">
+                <div class="colContenido" id="divResultadosBusqueda">
+                    <div class="tituloContenido card" style="justify-content: center;">
+                        <h5>Bienes guardados:</h5>
+                        <div class="divider"></div>
+                        <div id="cards-g" class="row overflow-h">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tabs-3">
+                <div class="colContenido" id="divReportes">
+                    <div class="tituloContenido card" style="justify-content: center;">
+                        <h5>Formulario de reporte:</h5>
+                        <div class="divider"></div>
+                        <div class="container" style="margin-top: 30px; padding-bottom: 30px;">
+                            <div class="input-field col s12">
+                                <h6>Se generan reportes de los datos guardados</h6>
+                                <br>
+                            </div>
+                            <h6>Filtro por ciudad:</h6>
+                            <div class="input-field col s12">
+                                <select id="select-form-1" name="ciudad" class="selectCiudad selects">
+                                  <option value=""  selected>Elije una ciudad</option>
+                                </select>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <h6>Filtro por tipo:</h6>
+                                <select id="select-form-2" name="tipo" class="selectTipo selects">
+                                  <option value=""  selected>Elije un tipo</option>
+                                </select>
+                            </div>
+                            <div style="display: flex;">
+
+                                <button class="btn waves-effect waves-light" style="width: 50%;" type="submit" name="action">Exportar EXCEL
+                                    <i class="material-icons right">print</i>
+                                </button>
+
+                                <button onclick="resetFilters(true)" class="btn waves-effect red darken-2 white-text waves-light" style="width: 50%;" type="button" name="action">
+                                    Resetear filtros
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script crossOrigin="anonymous" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+        <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/buscador.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#tabs").tabs();
+                getBienes();
+                getDataFilters();
+            });
+        </script>
+</body>
+
+</html>
